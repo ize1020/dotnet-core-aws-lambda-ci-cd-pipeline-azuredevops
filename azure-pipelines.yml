@@ -1,7 +1,7 @@
 trigger: none
 
 pool:
-  -name: gs-spring-boot
+  name: gs-spring-boot
     
 stages:
 - stage: Build

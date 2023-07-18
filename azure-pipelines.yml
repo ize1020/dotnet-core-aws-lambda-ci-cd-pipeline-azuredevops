@@ -38,8 +38,8 @@ stages:
   jobs: 
     - job:
 
-      variables:
-      - group: AWS-ARN
+#      variables:
+#      - group: AWS-ARN
 
       steps:
       - task: DownloadBuildArtifacts@0

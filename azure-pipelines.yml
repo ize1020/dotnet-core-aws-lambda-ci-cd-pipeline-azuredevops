@@ -1,5 +1,7 @@
-trigger:
-    - master
+trigger: none
+
+pool:
+  -name: gs-spring-boot
     
 stages:
 - stage: Build
@@ -50,12 +52,12 @@ stages:
       - task: LambdaDeployFunction@1
         displayName: 'Deploy Lambda Function'
         inputs:
-          awsCredentials: 'awsLambdaCICDPipeline'
-          regionName: 'us-east-1'
+          awsCredentials: 'hello-world-to-AWS'
+          regionName: 'eu-west-1'
           deploymentMode: 'codeandconfiguration'
           functionName: 'MyFunctionCreateFromAzureDevops'
           description: 'From AzureDevops'
-          functionHandler: 'awsLambdaCICDPipeline::awsLambdaCICDPipeline.Function::FunctionHandler'
+          functionHandler: 'LambdaTest::LambdaTest.LambdaHandler::handleRequest'
           runtime: 'dotnetcore2.1'
           codeLocation: 'localfile'
           localZipFile: '$(Build.ArtifactStagingDirectory)/drop/awsLambdaCICDPipeline.zip'

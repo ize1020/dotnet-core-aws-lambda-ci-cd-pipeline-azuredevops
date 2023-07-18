@@ -71,7 +71,7 @@ stages:
           PackageOnly: false
           lambdaProjectPath: 'src/awsLambdaCICDPipeline/awsLambdaCICDPipeline.csproj'
           functionName: 'MyFunctionCreateFromAzureDevops'
-          functionRole: 'arn:aws:lambda:eu-west-1:724553485006:function:MyFunctionCreateFromAzureDevops'
+          functionRole: '$(Role_ARN_1)'
           functionHandler: 'LambdaTest::LambdaTest.LambdaHandler::handleRequest'
           functionMemory: 512
           functionTimeout: 30
